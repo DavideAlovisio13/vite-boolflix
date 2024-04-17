@@ -22,6 +22,4 @@ export const store = reactive({
             query: "a",
         }
     },
-    
-
 })
