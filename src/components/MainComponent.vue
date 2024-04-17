@@ -4,7 +4,7 @@
             <div class="row">
                 <h2>Movies</h2>
                 <div class="col-12 col-md-6 col-lg-3" v-for="movie in store.movies" :key="movie.id" :class="{'d-none': movie.poster_path === null}">
-                    <CardComponent :title="movie.title" :overview="movie.overview" :image="movie.poster_path"/>
+                    <CardComponent :title="movie.title" :overview="movie.overview" :image="movie.poster_path" :lang="movie.original_language" :flag="store.flagUrl" :size="store.flagSize"/>
                 </div>
             </div>
             <div class="row">

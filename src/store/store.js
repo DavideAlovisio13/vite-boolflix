@@ -3,6 +3,8 @@ import { reactive } from "vue";
 export const store = reactive({
     apiUrl: "https://api.themoviedb.org/3/",
     imagesUrl: "http://image.tmdb.org/t/p/original/",
+    flagUrl: "https://flagsapi.com/",
+    flagSize: "/shiny/64.png",
     movies: [],
     tvs: [],
     endPoint: {

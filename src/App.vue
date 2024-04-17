@@ -43,7 +43,8 @@ export default {
       this.getTVSeries();
     },
   },
-  created() {},
+  created() {
+  },
   mounted() {},
 };
 </script>

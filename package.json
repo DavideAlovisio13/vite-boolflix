@@ -13,6 +13,7 @@
     "animate.css": "^4.1.1",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
+    "country-flag-icons": "^1.5.11",
     "gsap": "^3.12.5",
     "sass": "^1.74.1",
     "three": "^0.163.0",
