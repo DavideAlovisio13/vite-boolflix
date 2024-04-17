@@ -8,14 +8,14 @@
     </nav>
     <div>
       <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping"></span>
+        <span class="input-group-text" id="addon-wrapping" @click="searchEvent" >search</span>
         <input
             type="text"
             class="form-control"
             placeholder="Username"
             aria-label="Username"
             aria-describedby="addon-wrapping"
-            v-model="store.options.params.query"
+            v-model="store.options.params.query" @keyup.enter="searchEvent"
         />
       </div>
     </div>
@@ -36,6 +36,12 @@ export default {
       ],
     };
   },
+  methods: {
+    searchEvent() {
+      console.log("searchEvent triggered with query:", this.store.options.params.query);
+      this.$emit("fetchData", this.store.options.params.query);
+    }
+  }
 };
 </script>
 

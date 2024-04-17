@@ -1,7 +1,7 @@
  <!-- 1e77597204f226cd2a7c520c769c4f45 -->
  <!-- eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZTc3NTk3MjA0ZjIyNmNkMmE3YzUyMGM3NjljNGY0NSIsInN1YiI6IjY2MWY4MDBmOTY2NzBlMDE3ZGRhMWFkMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ozDUt2IbmeEW_QaE3afydKfwl56yHR9gm6Uy8iH-dZM -->
 <template>
-  <HeaderComponent />
+  <HeaderComponent @fetchData="getMovies"/>
   <MainComponent />
 </template>
 
@@ -36,8 +36,6 @@ import MainComponent from './components/MainComponent.vue';
       }
     },
     created() {
-      this.getMovies();
-      this.getTVSeries();
     },
     mounted() {
     }
