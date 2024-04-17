@@ -4,14 +4,22 @@
             <div class="row">
                 <h2>Movies</h2>
                 <div class="col-12 col-md-6 col-lg-3" v-for="movie in store.movies" :key="movie.id" :class="{'d-none': movie.poster_path === null}">
-                    <CardComponent :title="movie.title" :overview="movie.overview" :image="movie.poster_path" :lang="movie.original_language" :flag="store.flagUrl" :size="store.flagSize"/>
+                    <CardComponent :title="movie.title" :overview="movie.overview" :image="movie.poster_path" :lang="movie.original_language" :flag="store.flagUrl" :size="store.flagSize" :format="store.flagFormat" />
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="formId1"
+                            id="formId1"
+                            placeholder=""
+                        />
+                        <label for="formId1">Name</label>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <h2>TV Series</h2>
                 <div class="col-12 col-md-6 col-lg-3" v-for="tv in store.tvs" :key="tv.id">
                     <CardComponent :title="tv.name" :overview="tv.overview" :image="tv.poster_path"/>
-                </div>
             </div>
         </div>
     </main>

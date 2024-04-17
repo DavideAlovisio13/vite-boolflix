@@ -9,7 +9,7 @@
       <h5 class="card-title">{{ title }}</h5>
       <p class="card-text">{{ overview }}</p>
       <p class="card-text">{{ lang.toUpperCase() }}</p>
-      <span><img :src="flag + lang.toUpperCase() + size" alt="">
+      <span><img :src="flag + lang.toUpperCase() + size" :alt="lang">
       </span>
     </div>
   </div>
@@ -27,6 +27,7 @@ export default {
     lang: String,
     flag: String,
     size: String,
+    format: String,
   },
   data() {
     return {
@@ -79,7 +80,7 @@ export default {
 }
 
 span {
-    height: 32px;
-    width: 32px;
+    height: 16px;
+    width: 18px;
 }
 </style>
