@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <img class="card-img-top" :src="store.imagesUrl + image" alt="Card image cap">
+        <img class="card-img-top" :src="store.imagesUrl + image" alt="Card image cap" >
         <div class="card-body d-none">
             <h5 class="card-title">{{ title }}</h5>
             <p class="card-text">{{ overview }}</p>

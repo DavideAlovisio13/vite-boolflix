@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <h2>Movies</h2>
-                <div class="col-12 col-md-6 col-lg-3" v-for="movie in store.movies" :key="movie.id">
+                <div class="col-12 col-md-6 col-lg-3" v-for="movie in store.movies" :key="movie.id" :class="{'d-none': movie.poster_path === null}">
                     <CardComponent :title="movie.title" :overview="movie.overview" :image="movie.poster_path"/>
                 </div>
             </div>
