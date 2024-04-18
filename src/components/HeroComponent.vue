@@ -18,12 +18,13 @@
 <style lang="scss" scoped>
 #hero {
     width: 100%;
-    height: 500px;
+    height: 800px;
 
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        opacity: 0.7;
     }
 }
 </style>
