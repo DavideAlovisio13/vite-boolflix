@@ -9,7 +9,7 @@
       :src="store.imagesUrl + image"
       alt="Card image cap"
     />
-    <div class="card-body">
+    <div class="card-body d-none">
       <h5 class="card-title">{{ title }}</h5>
       <p class="card-text">{{ overview }}</p>
       <p class="card-text">{{ lang.toUpperCase() }}</p>
@@ -81,7 +81,6 @@ export default {
 .card {
   width: 18rem;
   margin: 1rem;
-  border: 1px solid #ccc;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   opacity: 0;
@@ -91,6 +90,11 @@ export default {
     width: 300px;
     height: 400px;
     object-fit: cover;
+    background-color: transparent;
+
+    img {
+      width: 100%;
+    }
   }
 }
 </style>

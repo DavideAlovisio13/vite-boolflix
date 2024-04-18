@@ -1,5 +1,6 @@
 <template>
   <main>
+    <HeroComponent />
     <div class="container">
       <div class="row">
         <h2>Movies</h2>
@@ -48,10 +49,12 @@
 <script>
 import { store } from "../store/store.js";
 import CardComponent from './CardComponent.vue';
+import HeroComponent from './HeroComponent.vue';
     export default {
         name: 'HeaderComponent',
         components: {
-            CardComponent
+            CardComponent,
+            HeroComponent
         },
         data() {
             return {
@@ -69,7 +72,7 @@ import CardComponent from './CardComponent.vue';
 
 <style lang="scss" scoped>
 main {
-  padding: 20px;
   width: 100%;
+  background-color: #000000;
 }
 </style>

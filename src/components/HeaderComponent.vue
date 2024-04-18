@@ -22,37 +22,20 @@
     <nav>
       <ul>
         <li v-for="item in menuItems" :key="item.id">
-          {{ item.label }}
+          <a href="#">{{ item.label }}</a>
         </li>
       </ul>
     </nav>
     <!-- imput group right -->
     <div>
       <div class="input-group flex-nowrap">
+        <span class="input-group-text-select">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="default-ltr-cache-4z3qvp e1svuwfo1" data-name="Languages" aria-labelledby=":R135dajalalbd:" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.7668 5.33333L10.5038 5.99715L9.33974 8.9355L8.76866 10.377L7.33333 14H9.10751L9.83505 12.0326H13.4217L14.162 14H16L12.5665 5.33333H10.8278H10.7668ZM10.6186 9.93479L10.3839 10.5632H11.1036H12.8856L11.6348 7.2136L10.6186 9.93479ZM9.52722 4.84224C9.55393 4.77481 9.58574 4.71045 9.62211 4.64954H6.41909V2H4.926V4.64954H0.540802V5.99715H4.31466C3.35062 7.79015 1.75173 9.51463 0 10.4283C0.329184 10.7138 0.811203 11.2391 1.04633 11.5931C2.55118 10.6795 3.90318 9.22912 4.926 7.57316V12.6667H6.41909V7.51606C6.81951 8.15256 7.26748 8.76169 7.7521 9.32292L8.31996 7.88955C7.80191 7.29052 7.34631 6.64699 6.9834 5.99715H9.06968L9.52722 4.84224Z" fill="#FFFFFF"></path></svg>
+        </span>
         <select class="form-select" aria-label=" select example">
-          <option selected>
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="default-ltr-cache-4z3qvp e1svuwfo1"
-              data-name="Languages"
-              aria-labelledby=":R135dajalalbd:"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M10.7668 5.33333L10.5038 5.99715L9.33974 8.9355L8.76866 10.377L7.33333 14H9.10751L9.83505 12.0326H13.4217L14.162 14H16L12.5665 5.33333H10.8278H10.7668ZM10.6186 9.93479L10.3839 10.5632H11.1036H12.8856L11.6348 7.2136L10.6186 9.93479ZM9.52722 4.84224C9.55393 4.77481 9.58574 4.71045 9.62211 4.64954H6.41909V2H4.926V4.64954H0.540802V5.99715H4.31466C3.35062 7.79015 1.75173 9.51463 0 10.4283C0.329184 10.7138 0.811203 11.2391 1.04633 11.5931C2.55118 10.6795 3.90318 9.22912 4.926 7.57316V12.6667H6.41909V7.51606C6.81951 8.15256 7.26748 8.76169 7.7521 9.32292L8.31996 7.88955C7.80191 7.29052 7.34631 6.64699 6.9834 5.99715H9.06968L9.52722 4.84224Z"
-                fill="currentColor"
-              ></path>
-            </svg>
-          </option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option value="1">Italiano</option>
+          <option value="2">English</option>
+          <option value="3">Deutsch</option>
         </select>
         <span class="input-group-text" id="addon-wrapping" @click="searchEvent"
           ><i class="fa-solid fa-magnifying-glass"></i
@@ -60,8 +43,8 @@
         <input
           type="text"
           class="form-control"
-          placeholder="Username"
-          aria-label="Username"
+          placeholder="Search"
+          aria-label="Search"
           aria-describedby="addon-wrapping"
           v-model="store.options.params.query"
           @keyup.enter="searchEvent"
@@ -93,11 +76,26 @@ export default {
       this.$emit("fetchData", this.store.options.params.query);
     },
   },
+  mounted() {
+    gsap.from("ev1dnif2", {
+      duration: 1,
+      scale: 1.1,
+      opacity: 0,
+      repeat: -1,
+      yoyo: true,
+    }); 
+    
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  height: 130px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -109,10 +107,11 @@ header {
   padding: 20px;
 
   .logo svg {
-    width: 80px;
-    height: 80px;
+    width: 200px;
+    height: 200px;
     filter: invert(9%) sepia(97%) saturate(5210%) hue-rotate(353deg)
       brightness(108%) contrast(94%);
+    object-position: -100px;
   }
 
   h1 {
@@ -135,6 +134,25 @@ header {
   nav li {
     display: inline-block;
     padding: 0 10px;
+    color: white;
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 700;
+
+      &:hover {
+        color: #c11119;
+      }
+    }
+  }
+
+  .input-group-text-select {
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 7px 20px;
   }
 
   .input-group-text {
@@ -145,7 +163,10 @@ header {
 
   .form-select {
     background-color: transparent;
-    border: 1px solid transparent;
+    border: 1px solid white;
+    color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     width: 35px;
     padding: 7px 20px;
     margin-right: 10px;
