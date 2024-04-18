@@ -32,11 +32,13 @@ import gsap from "gsap";
 import { store } from "../store/store.js";
 import CardComponent from './CardComponent.vue';
 import HeroComponent from './HeroComponent.vue';
+import { Agile } from "vue-agile";
     export default {
         name: 'HeaderComponent',
         components: {
             CardComponent,
-            HeroComponent
+            HeroComponent,
+            Agile
         },
         data() {
             return {
