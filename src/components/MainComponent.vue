@@ -17,6 +17,7 @@
             :flag="store.flagUrl"
             :size="store.flagSize"
             :format="store.flagFormat"
+            :vote="movie.vote_average"
           />
         </div>
       </div>
@@ -36,6 +37,7 @@
             :flag="store.flagUrl"
             :size="store.flagSize"
             :format="store.flagFormat"
+            :vote="tv.vote_average"
           />
         </div>
       </div>
