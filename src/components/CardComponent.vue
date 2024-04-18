@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" @mouseenter="scaleUpMouseEnter($event)" @mouseleave="scaleUpMouseLeave($event)">
     <img
       class="card-img-top"
       :src="store.imagesUrl + image"
@@ -16,8 +16,8 @@
 </template>
 
 <script>
+import gsap from "gsap";
 import { store } from "../store/store.js";
-import { hasFlag } from "country-flag-icons";
 export default {
   name: "CardComponent",
   props: {
@@ -35,8 +35,29 @@ export default {
     };
   },
   methods: {
+    scaleUpMouseEnter(event) {
+      gsap.to(event.currentTarget, {
+        duration: 0.1,
+        scale: 1.05,
+        ease: "expo.out"
+      })
+    },
+    scaleUpMouseLeave(event) {
+      gsap.to(event.currentTarget, {
+        duration: 0.1,
+        scale: 1,
+        ease: "expo.out"
+      })
+    }
   },
   mounted() {
+    gsap.to(".card", {
+      duration: 0.3,
+      opacity: 1,
+      scale: 1,
+      stagger: 0.1,
+      ease: "power1.inOut"
+    })
   }
 };
 </script>
@@ -49,6 +70,7 @@ export default {
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
   transition: transform 0.3s ease-in-out;
 
   &:hover {
