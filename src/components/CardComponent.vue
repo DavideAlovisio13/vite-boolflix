@@ -9,7 +9,7 @@
         ><img :src="flag + lang.toUpperCase() + size" :alt="lang" />
       </span>
       <div class="star">
-        <span v-for="i in 5" :key="i" :class="{ 'd-none': i >= vote, 'd-block ': i <= vote }">&#11088;</span>
+        <span v-for="i in 5" :key="i" :class="{ 'd-none': i >= vote, 'd-inline': i <= vote }">&#11088;</span>
       </div>
     </div>
   </div>
@@ -77,14 +77,13 @@ export default {
   transition: transform 0.3s ease-in-out;
   overflow-y: auto;
   overflow-x: hidden;
+  border: 1px solid #000000;
 
   &::-webkit-scrollbar {
     display: none;
   }
 
   .card-img-top {
-    width: 300px;
-    height: 400px;
     object-fit: cover;
     background-color: transparent;
 
@@ -102,6 +101,9 @@ export default {
     top: 0;
     left: 0;
     right: 0;
+    min-height: 430px;
+    text-align: center;
+    padding: 1rem;
   }
 }
 </style>
