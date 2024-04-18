@@ -1,7 +1,7 @@
 <template>
   <header>
     <!-- logo img header left -->
-    <div>
+    <div class="logo">
       <svg
         viewBox="0 0 111 30"
         version="1.1"
@@ -108,7 +108,7 @@ header {
   );
   padding: 20px;
 
-  svg {
+  .logo svg {
     width: 80px;
     height: 80px;
     filter: invert(9%) sepia(97%) saturate(5210%) hue-rotate(353deg)
@@ -121,14 +121,20 @@ header {
     font-size: 1rem;
   }
 
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   nav ul {
-    list-style-type: none;
+    margin: 0;
     padding: 0;
   }
 
   nav li {
     display: inline-block;
-    margin-right: 10px;
+    padding: 0 10px;
   }
 
   .input-group-text {
