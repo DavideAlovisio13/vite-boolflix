@@ -4,12 +4,13 @@
     <div class="card-body" :class="{ 'd-none': !activeBack }">
       <h5 class="card-title">{{ title }}</h5>
       <p class="card-text">{{ overview }}</p>
-      <p class="card-text">{{ lang.toUpperCase() }}</p>
-      <span class="flag"
-        ><img :src="flag + lang.toUpperCase() + size" :alt="lang" />
+      <p class="card-text d-inline"><strong>language:</strong> {{ lang.toUpperCase() }}</p>
+      <span class="flag px-2"
+        ><img :src="flag + lang.toUpperCase() + size" :alt="lang" style="width: 30px" />
       </span>
       <div class="star">
-        <span v-for="i in 5" :key="i" :class="{ 'd-none': i >= vote, 'd-inline': i <= vote }">&#11088;</span>
+        <span><strong>Rate:</strong> </span>
+        <span v-for="i in 5" :key="i" :class="{ 'd-none': i >= vote, 'd-inline': i <= vote }"> &#11088;</span>
       </div>
     </div>
   </div>

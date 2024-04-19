@@ -1,6 +1,6 @@
 <template>
     <div id="hero">
-        <img src="/public/images/IT-it-20240415-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="">
+        <img src="/images/IT-it-20240415-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="">
     </div>
 </template>
 

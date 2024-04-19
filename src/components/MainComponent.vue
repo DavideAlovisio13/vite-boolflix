@@ -7,7 +7,7 @@
     <div class="container">
       <!-- row -->
       <div class="row">
-        <h2>Movies</h2>
+        <h2 class="text-white">Movies</h2>
         <!-- col1 -->
         <div class="col-12 col-md-6 col-lg-3" v-for="movie in store.movies" :key="movie.id" :class="{ 'd-none': movie.poster_path === null }">
           <!-- card component -->
@@ -16,7 +16,7 @@
       </div>
       <!-- row -->
       <div class="row">
-        <h2>TV Series</h2>
+        <h2 class="text-white">TV Series</h2>
         <!-- col2 -->
         <div class="col-12 col-md-6 col-lg-3" v-for="tv in store.tvs" :key="tv.id" :class="{ 'd-none': tv.poster_path === null }">
           <!-- card component -->
@@ -32,13 +32,11 @@ import gsap from "gsap";
 import { store } from "../store/store.js";
 import CardComponent from './CardComponent.vue';
 import HeroComponent from './HeroComponent.vue';
-import { Agile } from "vue-agile";
     export default {
         name: 'HeaderComponent',
         components: {
             CardComponent,
             HeroComponent,
-            Agile
         },
         data() {
             return {

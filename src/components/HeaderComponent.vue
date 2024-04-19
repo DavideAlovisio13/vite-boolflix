@@ -140,6 +140,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(images/deadpool-06f2a06d7a418ec887300397b6861383bf1e3b72f604ddd5f75bce170e81dce9.png);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    padding: 10px;
 
     ul {
       margin: 0;
@@ -181,7 +188,6 @@ header {
   .form-select {
     background-color: transparent;
     border: 1px solid white;
-    color: white;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     width: 35px;
