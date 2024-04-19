@@ -9,11 +9,13 @@ export const store = reactive({
     tvs: [],
     most_populars: [],
     tv_populars: [],
+    tv_on_airs: [],
     endPoint: {
         movie: "search/movie",
         tv: "search/tv",
         most_popular:"movie/popular",
-        tv_popular:"tv/popular"
+        tv_popular:"tv/popular",
+        tv_on_air:"tv/on_the_air",
     },
     options: {
         params: {

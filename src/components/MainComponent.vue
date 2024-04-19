@@ -5,10 +5,28 @@
     <HeroComponent />
     <!-- container -->
     <div class="container py-5">
+      <!-- row movies populars -->
       <h2 class="text-white">Most Popular Movies</h2>
       <div class="row flex-nowrap overflow-auto">
         <div class="col-12 col-md-6 col-lg-3" v-for="popular in store.most_populars" :key="popular.id" :class="{ 'd-none': popular.poster_path === null }">
           <CardComponent :title="popular.title" :overview="popular.overview" :image="popular.poster_path" :lang="popular.original_language" :flag="store.flagUrl" :size="store.flagSize" :format="store.flagFormat" :vote="popular.vote_average" />
+        </div>
+      </div>
+      <!-- row tv populars -->
+      <h2 class="text-white">Most Popular TVSeries</h2>
+      <div class="row flex-nowrap overflow-auto">
+        <div class="col-12 col-md-6 col-lg-3" v-for="seriespop in store.tv_populars" :key="seriespop.id" :class="{ 'd-none': seriespop.poster_path === null }">
+          <CardComponent :title="seriespop.title" :overview="seriespop.overview" :image="seriespop.poster_path" :lang="seriespop.original_language" :flag="store.flagUrl" :size="store.flagSize" :format="store.flagFormat" :vote="seriespop.vote_average"/>
+        </div>
+      </div>
+      <!-- on ari tvSeries -->
+      <h2 class="text-white"><i class="fa-solid fa-tower-broadcast text-danger"></i> On Air <i class="fa-solid fa-tower-broadcast text-danger"></i></h2>
+      <div class="row flex-nowrap overflow-auto">
+        <div class="col-12 col-md-6 col-lg-3" v-for="onair in store.tv_on_airs" :key="onair.id"
+          :class="{ 'd-none': onair.poster_path === null }">
+          <CardComponent :title="onair.name" :overview="onair.overview" :image="onair.poster_path"
+            :lang="onair.original_language" :flag="store.flagUrl" :size="store.flagSize" :format="store.flagFormat"
+            :vote="onair.vote_average" />
         </div>
       </div>
       <!-- row -->

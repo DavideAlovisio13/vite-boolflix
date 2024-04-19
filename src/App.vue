@@ -55,11 +55,18 @@ export default {
           this.store.tv_populars = r.data.results;
           console.log(this.store.popular_tv);
         });
+    },
+    getOnAirTV() {
+      axios.get(this.store.apiUrl + this.store.endPoint.tv_on_air, this.store.optionsgen)
+      .then((ans) => {
+        this.store.tv_on_airs = ans.data.results;
+      })
     }
   },
   created() {
     this.getMostPopular();
     this.getMostPopularTv();
+    this.getOnAirTV();
   }
 }
 </script>
