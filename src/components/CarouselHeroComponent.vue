@@ -7,8 +7,8 @@
                 <p class="text-white">{{ item.description }}</p>
             </div>
         </div>
-        <button @click="prevItem">Previous</button>
-        <button @click="nextItem">Next</button>
+        <button @click="prevItem" class="btn1"><i class="fa-solid fa-circle-left w-100 h-100"></i></button>
+        <button @click="nextItem" class="btn2"><i class="fa-solid fa-circle-right"></i></button>
     </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
             carouselItems: [
                 { title: 'See what\'s next', description: 'Watch anywhere. Cancel anytime', image: '/images/carousel1.png' },
                 { title: 'Explore. Enjoy.', description: 'Stream unlimited movies and TV shows on your device', image: '/images/carousel2.webp' },
-                { title: 'Item 3', description: 'Description 3' },
+                { title: 'Best price. Best quality', description: 'Spend a little and enjoy best quality videos', image: '/images/carousel3.png' },
             ],
             activeIndex: 0
         };
@@ -41,8 +41,8 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
-    width: 400px;
+    height: 400px;
+    width: 500px;
 
     img {
         object-fit: cover;
@@ -72,5 +72,28 @@ export default {
 
 .carousel-inner > div.active {
     display: block;
+}
+
+button {
+    position: absolute;
+    background-color: red;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    top: 50%;
+    border: none;
+    box-shadow:0 3px 15px #C11119;
+    color: white;
+}
+
+.btn1 {
+    transform: translateY(-50%);
+    border: none;
+}
+
+.btn2 {
+    transform: translateY(-50%);
+    right: 0;
+    
 }
 </style>

@@ -6,7 +6,7 @@
         <div class="main-title">
             <h1 class="text-white">Find your next favorite movie</h1>
         </div>
-        <CarouselHeroComponent />
+        <CarouselHeroComponent class="carousel"/>
     </div>
 </template>
 
@@ -61,6 +61,14 @@ import CarouselHeroComponent from './CarouselHeroComponent.vue';
             color: white;
             font-weight: 900;
         }
+
+    }
+
+    .carousel {
+        align-self: flex-end;
+        margin: 20px 1200px;
+        position: absolute;
+        z-index: 1;
 
     }
 }
