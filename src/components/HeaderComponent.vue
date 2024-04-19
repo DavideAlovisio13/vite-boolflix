@@ -72,6 +72,7 @@
 </template>
 
 <script>
+import gsap from "gsap";
 import { store } from "../store/store.js";
 export default {
   data() {
@@ -94,13 +95,6 @@ export default {
     },
   },
   mounted() {
-    gsap.from("ev1dnif2", {
-      duration: 1,
-      scale: 1.1,
-      opacity: 0,
-      repeat: -1,
-      yoyo: true,
-    });
   },
 };
 </script>
