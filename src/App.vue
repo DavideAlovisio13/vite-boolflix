@@ -49,9 +49,17 @@ export default {
           console.log(this.store.popular);
         });
     },
+    getMostPopularTv() {
+      axios.get(this.store.apiUrl + this.store.endPoint.tv_popular, this.store.optionsgen)
+        .then((r) => {
+          this.store.tv_populars = r.data.results;
+          console.log(this.store.popular_tv);
+        });
+    }
   },
   created() {
     this.getMostPopular();
+    this.getMostPopularTv();
   }
 }
 </script>

@@ -8,10 +8,12 @@ export const store = reactive({
     movies: [],
     tvs: [],
     most_populars: [],
+    tv_populars: [],
     endPoint: {
         movie: "search/movie",
         tv: "search/tv",
         most_popular:"movie/popular",
+        tv_popular:"tv/popular"
     },
     options: {
         params: {
