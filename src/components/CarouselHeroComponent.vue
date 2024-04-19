@@ -48,7 +48,7 @@ export default {
         object-fit: cover;
         width: 100%;
         height: 100%;
-        opacity: 0.8;
+        opacity: 0.7;
         box-shadow: 0 15px 15px #C11119;
     }
 
@@ -76,7 +76,7 @@ export default {
 
 button {
     position: absolute;
-    background-color: red;
+    background-color: transparent;
     border-radius: 50%;
     font-size: 2rem;
     cursor: pointer;
@@ -84,16 +84,20 @@ button {
     border: none;
     box-shadow:0 3px 15px #C11119;
     color: white;
+
+    i {
+        padding: 10px;
+    }
 }
 
 .btn1 {
     transform: translateY(-50%);
-    border: none;
+    left: -30px;
 }
 
 .btn2 {
     transform: translateY(-50%);
-    right: 0;
+    right: -30px;
     
 }
 </style>
