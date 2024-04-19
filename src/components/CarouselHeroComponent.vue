@@ -4,7 +4,7 @@
             <div v-for="(item, index) in carouselItems" :key="index" :class="{'active': index === activeIndex}">
                 <img :src="item.image" alt="carousel image1">
                 <h3 class="text-white fw-bolder">{{ item.title }}</h3>
-                <p class="text-white">{{ item.description }}</p>
+                <p class="text-danger">{{ item.description }}</p>
             </div>
         </div>
         <button @click="prevItem" class="btn1"><i class="fa-solid fa-circle-left w-100 h-100"></i></button>
@@ -63,6 +63,8 @@ export default {
         top: 60%;
         left: 10%;
         padding: 5px 30px;
+        font-size: 1.2rem;
+        background-color: black;
     }
 }
 
