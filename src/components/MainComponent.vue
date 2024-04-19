@@ -6,21 +6,26 @@
     <!-- container -->
     <div class="container">
       <!-- row -->
-      <div class="row">
-        <h2 class="text-white">Movies</h2>
+      <h2 class="text-white">Movies</h2>
+      <div class="row flex-nowrap overflow-auto">
         <!-- col1 -->
-        <div class="col-12 col-md-6 col-lg-3" v-for="movie in store.movies" :key="movie.id" :class="{ 'd-none': movie.poster_path === null }">
+        <div class="col-12 col-md-6 col-lg-3" v-for="movie in store.movies" :key="movie.id"
+          :class="{ 'd-none': movie.poster_path === null }">
           <!-- card component -->
-          <CardComponent :title="movie.title" :overview="movie.overview" :image="movie.poster_path" :lang="movie.original_language" :flag="store.flagUrl" :size="store.flagSize" :format="store.flagFormat" :vote="movie.vote_average" class="moviecard"/>
+          <CardComponent :title="movie.title" :overview="movie.overview" :image="movie.poster_path"
+            :lang="movie.original_language" :flag="store.flagUrl" :size="store.flagSize" :format="store.flagFormat"
+            :vote="movie.vote_average" class="moviecard" />
         </div>
       </div>
       <!-- row -->
       <div class="row">
         <h2 class="text-white">TV Series</h2>
         <!-- col2 -->
-        <div class="col-12 col-md-6 col-lg-3" v-for="tv in store.tvs" :key="tv.id" :class="{ 'd-none': tv.poster_path === null }">
+        <div class="col-12 col-md-6 col-lg-3" v-for="tv in store.tvs" :key="tv.id"
+          :class="{ 'd-none': tv.poster_path === null }">
           <!-- card component -->
-          <CardComponent :title="tv.name" :overview="tv.overview" :image="tv.poster_path" :lang="tv.original_language" :flag="store.flagUrl" :size="store.flagSize" :format="store.flagFormat" :vote="tv.vote_average"/>
+          <CardComponent :title="tv.name" :overview="tv.overview" :image="tv.poster_path" :lang="tv.original_language"
+            :flag="store.flagUrl" :size="store.flagSize" :format="store.flagFormat" :vote="tv.vote_average" />
         </div>
       </div>
     </div>
@@ -32,29 +37,54 @@ import gsap from "gsap";
 import { store } from "../store/store.js";
 import CardComponent from './CardComponent.vue';
 import HeroComponent from './HeroComponent.vue';
-    export default {
-        name: 'HeaderComponent',
-        components: {
-            CardComponent,
-            HeroComponent,
-        },
-        data() {
-            return {
-                store,
-            }
-        },
-        methods: {
-
-        },
-        mounted() {
-            
-        }
+export default {
+  name: 'HeaderComponent',
+  components: {
+    CardComponent,
+    HeroComponent,
+  },
+  data() {
+    return {
+      store,
     }
+  },
+  methods: {
+
+  },
+  mounted() {
+
+  }
+}
 </script>
 
 <style lang="scss" scoped>
 main {
   width: 100%;
   background-color: #000000;
+
+  .row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  ::-webkit-scrollbar {
+    background-color: #c11119;
+    border-radius: 20px;
+    height: 15px;
+
+    &:hover {
+      background-color: #000000;
+    }
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 20px;
+
+    &:hover {
+      background-color: #c11119;
+    }
+  }
+
 }
 </style>
