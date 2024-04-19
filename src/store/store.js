@@ -7,9 +7,11 @@ export const store = reactive({
     flagSize: "/flat/64.png",
     movies: [],
     tvs: [],
+    most_populars: [],
     endPoint: {
         movie: "search/movie",
         tv: "search/tv",
+        most_popular:"movie/popular",
     },
     options: {
         params: {
@@ -17,4 +19,10 @@ export const store = reactive({
             query: "",
         }
     },
+
+    optionsgen: {
+        params: {
+            api_key: "1e77597204f226cd2a7c520c769c4f45",
+        }
+    }
 })

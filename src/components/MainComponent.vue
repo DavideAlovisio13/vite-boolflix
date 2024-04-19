@@ -4,7 +4,13 @@
     <!-- hero component -->
     <HeroComponent />
     <!-- container -->
-    <div class="container">
+    <div class="container py-5">
+      <h2 class="text-white">Most Popular Movies</h2>
+      <div class="row flex-nowrap overflow-auto">
+        <div class="col-12 col-md-6 col-lg-3" v-for="popular in store.most_populars" :key="popular.id" :class="{ 'd-none': popular.poster_path === null }">
+          <CardComponent :title="popular.title" :overview="popular.overview" :image="popular.poster_path" :lang="popular.original_language" :flag="store.flagUrl" :size="store.flagSize" :format="store.flagFormat" :vote="popular.vote_average" />
+        </div>
+      </div>
       <!-- row -->
       <h2 class="text-white">Movies</h2>
       <div class="row flex-nowrap overflow-auto">
@@ -18,8 +24,8 @@
         </div>
       </div>
       <!-- row -->
-      <div class="row">
-        <h2 class="text-white">TV Series</h2>
+      <h2 class="text-white">TV Series</h2>
+      <div class="row flex-nowrap overflow-auto">
         <!-- col2 -->
         <div class="col-12 col-md-6 col-lg-3" v-for="tv in store.tvs" :key="tv.id"
           :class="{ 'd-none': tv.poster_path === null }">
@@ -65,6 +71,7 @@ main {
   .row {
     margin-top: 20px;
     margin-bottom: 20px;
+    background-image: url(/public/images/bg-col.jpg);
   }
 
   ::-webkit-scrollbar {
@@ -74,6 +81,10 @@ main {
 
     &:hover {
       background-color: #000000;
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #c11119;
+      }
     }
   }
 

@@ -42,14 +42,18 @@ export default {
       this.getMovies();
       this.getTVSeries();
     },
+    getMostPopular() {
+      axios.get(this.store.apiUrl + this.store.endPoint.most_popular, this.store.optionsgen)
+        .then((re) => {
+          this.store.most_populars = re.data.results;
+          console.log(this.store.popular);
+        });
+    },
   },
   created() {
-  },
-  mounted() {
-  },
-};
+    this.getMostPopular();
+  }
+}
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
